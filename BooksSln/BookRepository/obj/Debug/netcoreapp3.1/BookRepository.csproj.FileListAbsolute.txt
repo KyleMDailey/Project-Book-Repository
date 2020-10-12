@@ -75,3 +75,4 @@ C:\MSSAProject\BooksSln\BookRepository\bin\Debug\netcoreapp3.1\Newtonsoft.Json.d
 C:\MSSAProject\BooksSln\BookRepository\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\MSSAProject\BooksSln\BookRepository\bin\Debug\netcoreapp3.1\libman.json
 C:\MSSAProject\BooksSln\BookRepository\obj\Debug\netcoreapp3.1\Razor\Views\Shared\BookSummary.cshtml.g.cs
+C:\MSSAProject\BooksSln\BookRepository\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\NavigationMenu\Default.cshtml.g.cs

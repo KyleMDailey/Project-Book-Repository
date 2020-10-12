@@ -16,10 +16,11 @@ namespace BookRepository.Controllers
             repository = repo;
         }
 
-        public ViewResult Index(int bookPage = 1)
+        public ViewResult Index(string category, int bookPage = 1)
             => View(new BooksListViewModel
             {
                 Books = repository.Books
+                    .Where(b => category == null || b.Category == category)
                     .OrderBy(b => b.BookID)
                     .Skip((bookPage - 1) * PageSize)
                     .Take(PageSize),
@@ -27,8 +28,12 @@ namespace BookRepository.Controllers
                 {
                     CurrentPage = bookPage,
                     ItemsPerPage = PageSize,
-                    TotalItems = repository.Books.Count()
-                }
-           });
+                    TotalItems = category == null ?
+                        repository.Books.Count() :
+                        repository.Books.Where(e =>
+                            e.Category == category).Count()
+                },
+                CurrentCategory = category
+            });
     }
 }
