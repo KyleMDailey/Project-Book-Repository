@@ -1,5 +1,5 @@
 //Author:  Kyle Dailey
-//Date:  09/22/2020
+//Initial Creation Date:  09/22/2020
 
 /**************************************************************************************************************************************************************************************
 
@@ -12,9 +12,9 @@ The project will be built as a web page using MVC and will eventually be deploye
 
 ***************************************************************************************************************************************************************************************
 
-Revisions:  Added additional administrative functionality.
+Revisions:  Added navigation buttons for different book categories.
 
-Revision Date:  10/27/2020
+Revision Date:  10/10/2020
 
 Revised By:  Kyle Dailey
 
@@ -66,9 +66,19 @@ namespace BookRepository
 
             app.UseRouting();
             app.UseEndpoints(endpoints => {
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/Page{bookPage:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page", "Page{bookPage:int}",
+                    new { Controller = "Home", action = "Index", bookPage = 1 });
+
+                endpoints.MapControllerRoute("category", "{category}",
+                    new { Controller = "Home", action = "Index", bookPage = 1 });
+
                 endpoints.MapControllerRoute("pagination",
-                "Books/Page{bookPage}",
-                new { Controller = "Home", action = "Index" });
+                    "Books/Page{bookPage}",
+                    new { Controller = "Home", action = "Index", bookPage = 1 });
                 endpoints.MapDefaultControllerRoute();
             });
             SeedData.EnsurePopulated(app);
