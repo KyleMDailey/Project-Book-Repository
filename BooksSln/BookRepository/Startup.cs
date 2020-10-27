@@ -12,9 +12,9 @@ The project will be built as a web page using MVC and will eventually be deploye
 
 ***************************************************************************************************************************************************************************************
 
-Revisions:  Added navigation buttons for different book categories.
+Revisions:  Added additional administrative functionality.
 
-Revision Date:  10/10/2020
+Revision Date:  10/27/2020
 
 Revised By:  Kyle Dailey
 
