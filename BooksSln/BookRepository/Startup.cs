@@ -12,9 +12,9 @@ The project will be built as a web page using MVC and will eventually be deploye
 
 ***************************************************************************************************************************************************************************************
 
-Revisions:  Seeded the initial database, added pagination, added bootstrap.
+Revisions:  Added additional administrative functionality.
 
-Revision Date:  10/02/2020
+Revision Date:  10/27/2020
 
 Revised By:  Kyle Dailey
 
