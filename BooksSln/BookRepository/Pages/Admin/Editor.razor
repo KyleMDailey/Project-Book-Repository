@@ -1,0 +1,88 @@
+﻿@page "/admin/books/edit/{id:long}"
+@page "/admin/books/create"
+@inherits OwningComponentBase<IRepositoryRepository>
+
+
+<style>
+    div.validation-message { color: rgb(220, 53, 69); font-weight: 500 }
+</style>
+
+<h3 class="bg-@ThemeColor text-white text-center p-1">@TitleText a Product</h3>
+<EditForm Model="Book" OnValidSubmit="SaveBook">
+    <DataAnnotationsValidator />
+    @if (Book.BookID != 0)
+    {
+        <div class="form-group">
+            <label>ID</label>
+            <input class="form-control" disabled value="@Book.BookID" />
+        </div>
+    }
+    <div class="form-group">
+        <label>Title</label>
+        <ValidationMessage For="@(() => Book.Title)" />
+        <InputText class="form-control" @bind-Value="Book.Title" />
+    </div>
+    <div class="form-group">
+        <label>Author</label>
+        <ValidationMessage For="@(() => Book.Author)" />
+        <InputText class="form-control" @bind-Value="Book.Author" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <ValidationMessage For="@(() => Book.Description)" />
+        <InputText class="form-control" @bind-Value="Book.Description" />
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        <ValidationMessage For="@(() => Book.Category)" />
+        <InputText class="form-control" @bind-Value="Book.Category" />
+    </div>
+    <div class="form-group">
+        <label>Paradigm</label>
+        <ValidationMessage For="@(() => Book.Paradigm)" />
+        <InputText class="form-control" @bind-Value="Book.Paradigm" />
+    </div>
+    <div class="form-group">
+        <label>BookSeller</label>
+        <ValidationMessage For="@(() => Book.BookSeller)" />
+        <InputText class="form-control" @bind-Value="Book.BookSeller" />
+    </div>
+    <button type="submit" class="btn btn-@ThemeColor">Save</button>
+    <NavLink class="btn btn-secondary" href="/admin/products">Cancel</NavLink>
+</EditForm>
+
+@code {
+    public IRepositoryRepository Repository => Service;
+
+    [Inject]
+    public NavigationManager NavManager { get; set; }
+
+    [Parameter]
+    public long Id { get; set; } = 0;
+
+    public Book Book { get; set; } = new Book();
+
+    protected override void OnParametersSet()
+    {
+        if (Id != 0)
+        {
+            Book = Repository.Books.FirstOrDefault(b => b.BookID == Id);
+        }
+    }
+    public void SaveBook()
+    {
+        if (Id == 0)
+        {
+            Repository.CreateBook(Book);
+        }
+        else
+        {
+            Repository.SaveBook(Book);
+        }
+        NavManager.NavigateTo("/admin/books");
+    }
+
+    public string ThemeColor => Id == 0 ? "primary" : "warning";
+
+    public string TitleText => Id == 0 ? "Create" : "Edit";
+}

@@ -91,3 +91,5 @@ C:\MSSAProject\BooksSln\BookRepository\obj\Debug\netcoreapp3.1\BookRepository.ge
 C:\MSSAProject\BooksSln\BookRepository\obj\Debug\netcoreapp3.1\BookRepository.csprojAssemblyReference.cache
 C:\MSSAProject\BooksSln\BookRepository\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Admin\Details.razor.g.cs
 C:\MSSAProject\BooksSln\BookRepository\obj\Debug\netcoreapp3.1\Razor\Pages\Admin\Details.razor.g.cs
+C:\MSSAProject\BooksSln\BookRepository\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Admin\Editor.razor.g.cs
+C:\MSSAProject\BooksSln\BookRepository\obj\Debug\netcoreapp3.1\Razor\Pages\Admin\Editor.razor.g.cs
