@@ -55,6 +55,11 @@ namespace BookRepository
                     Configuration["ConnectionStrings:BookRepositoryConnection"]));
 
             services.AddScoped<IRepositoryRepository, EFRepositoryRepository>();
+            services.AddRazorPages();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddServerSideBlazor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,7 +68,7 @@ namespace BookRepository
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute("catpage",
@@ -80,7 +85,11 @@ namespace BookRepository
                     "Books/Page{bookPage}",
                     new { Controller = "Home", action = "Index", bookPage = 1 });
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapRazorPages();
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
             });
+
             SeedData.EnsurePopulated(app);
         }
     }

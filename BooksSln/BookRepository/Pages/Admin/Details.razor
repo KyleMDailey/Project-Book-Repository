@@ -1,0 +1,34 @@
+﻿@page "/admin/products/details/{id:long}"
+
+<h3 class="bg-info text-white text-center p-1">Details</h3>
+<table class="table table-sm table-bordered table-striped">
+    <tbody>
+        <tr><th>ID</th><td>@Book.BookID</td></tr>
+        <tr><th>Title</th><td>@Book.Title</td></tr>
+        <tr><th>Author</th><td>@Book.Author</td></tr>
+        <tr><th>Description</th><td>@Book.Description</td></tr>
+        <tr><th>Category</th><td>@Book.Category</td></tr>
+        <tr><th>Paradigm</th><td>@Book.Paradigm</td></tr>
+        <tr><th>BookSeller</th><td>@Book.BookSeller</td></tr>
+    </tbody>
+</table>
+
+<NavLink class="btn btn-warning" href="@EditUrl">Edit</NavLink>
+<NavLink class="btn btn-secondary" href="/admin/products">Back</NavLink>
+
+@code {
+    [Inject]
+    public IRepositoryRepository Repository { get; set; }
+
+    [Parameter]
+    public long Id { get; set; }
+
+    public Book Book { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        Book = Repository.Books.FirstOrDefault(b => b.BookID == Id);
+    }
+
+    public string EditUrl => $"/admin/products/edit/{Book.BookID}";
+}

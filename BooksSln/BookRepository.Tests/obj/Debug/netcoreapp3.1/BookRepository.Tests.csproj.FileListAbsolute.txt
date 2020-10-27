@@ -3,6 +3,7 @@ C:\MSSAProject\BooksSln\BookRepository.Tests\bin\Debug\netcoreapp3.1\BookReposit
 C:\MSSAProject\BooksSln\BookRepository.Tests\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\MSSAProject\BooksSln\BookRepository.Tests\bin\Debug\netcoreapp3.1\appsettings.json
 C:\MSSAProject\BooksSln\BookRepository.Tests\bin\Debug\netcoreapp3.1\global.json
+C:\MSSAProject\BooksSln\BookRepository.Tests\bin\Debug\netcoreapp3.1\libman.json
 C:\MSSAProject\BooksSln\BookRepository.Tests\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\MSSAProject\BooksSln\BookRepository.Tests\bin\Debug\netcoreapp3.1\BookRepository.exe
 C:\MSSAProject\BooksSln\BookRepository.Tests\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
@@ -143,4 +144,3 @@ C:\MSSAProject\BooksSln\BookRepository.Tests\obj\Debug\netcoreapp3.1\BookReposit
 C:\MSSAProject\BooksSln\BookRepository.Tests\obj\Debug\netcoreapp3.1\BookRepository.Tests.dll
 C:\MSSAProject\BooksSln\BookRepository.Tests\obj\Debug\netcoreapp3.1\BookRepository.Tests.pdb
 C:\MSSAProject\BooksSln\BookRepository.Tests\obj\Debug\netcoreapp3.1\BookRepository.Tests.genruntimeconfig.cache
-C:\MSSAProject\BooksSln\BookRepository.Tests\bin\Debug\netcoreapp3.1\libman.json

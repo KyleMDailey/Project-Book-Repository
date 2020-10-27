@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRepository", "BookRepository\BookRepository.csproj", "{AD8B2CF4-09A2-4943-B0C5-9F2E2C5557C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookRepository", "BookRepository\BookRepository.csproj", "{AD8B2CF4-09A2-4943-B0C5-9F2E2C5557C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRepository.Tests", "BookRepository.Tests\BookRepository.Tests.csproj", "{42B82574-D851-4FA9-A669-A835F1EA2FAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookRepository.Tests", "BookRepository.Tests\BookRepository.Tests.csproj", "{42B82574-D851-4FA9-A669-A835F1EA2FAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AD8B2CF4-09A2-4943-B0C5-9F2E2C5557C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +41,11 @@ Global
 		{42B82574-D851-4FA9-A669-A835F1EA2FAA}.Release|x64.Build.0 = Release|Any CPU
 		{42B82574-D851-4FA9-A669-A835F1EA2FAA}.Release|x86.ActiveCfg = Release|Any CPU
 		{42B82574-D851-4FA9-A669-A835F1EA2FAA}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0435FC8C-2E2E-49C9-9E46-7359DEAD3ACE}
 	EndGlobalSection
 EndGlobal

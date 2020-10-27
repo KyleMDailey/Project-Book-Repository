@@ -1,0 +1,65 @@
+﻿@page "/admin/books"
+@page "/admin"
+@inherits OwningComponentBase<IRepositoryRepository>
+
+<table class="table table-sm table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <td />
+        </tr>
+    </thead>
+    <tbody>
+        @if (BookData?.Count() > 0)
+        {
+            @foreach (Book b in BookData)
+            {
+        <tr>
+            <td>@b.BookID</td>
+            <td>@b.Title</td>
+            <td>@b.Author</td>
+            <td>@b.Description</td>
+            <td>@b.Category</td>
+            <td>@b.Paradigm</td>
+            <td>@b.BookSeller</td>
+            <td>
+                <NavLink class="btn btn-info btn-sm"
+                         href="@GetDetailsUrl(b.BookID)">
+                    Details
+                </NavLink>
+                <NavLink class="btn btn-warning btn-sm"
+                         href="@GetEditUrl(b.BookID)">
+                    Edit
+                </NavLink>
+            </td>
+        </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">No Products</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<NavLink class="btn btn-primary" href="/admin/products/create">Create</NavLink>
+
+@code {
+    public IRepositoryRepository Repository => Service;
+    public IEnumerable<Book> BookData { get; set; }
+    protected async override Task OnInitializedAsync()
+    {
+        await UpdateData();
+    }
+    public async Task UpdateData()
+    {
+        BookData = await Repository.Books.ToListAsync();
+    }
+    public string GetDetailsUrl(long id) => $"/admin/books/details/{id}";
+    public string GetEditUrl(long id) => $"/admin/books/edit/{id}";
+}
