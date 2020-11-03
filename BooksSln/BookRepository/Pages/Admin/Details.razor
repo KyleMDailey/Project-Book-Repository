@@ -1,4 +1,4 @@
-﻿@page "/admin/products/details/{id:long}"
+﻿@page "/admin/books/details/{id:long}"
 
 <h3 class="bg-info text-white text-center p-1">Details</h3>
 <table class="table table-sm table-bordered table-striped">
@@ -14,7 +14,7 @@
 </table>
 
 <NavLink class="btn btn-warning" href="@EditUrl">Edit</NavLink>
-<NavLink class="btn btn-secondary" href="/admin/products">Back</NavLink>
+<NavLink class="btn btn-secondary" href="/admin/books">Back</NavLink>
 
 @code {
     [Inject]
@@ -30,5 +30,5 @@
         Book = Repository.Books.FirstOrDefault(b => b.BookID == Id);
     }
 
-    public string EditUrl => $"/admin/products/edit/{Book.BookID}";
+    public string EditUrl => $"/admin/books/edit/{Book.BookID}";
 }

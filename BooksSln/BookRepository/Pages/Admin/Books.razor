@@ -37,6 +37,10 @@
                          href="@GetEditUrl(b.BookID)">
                     Edit
                 </NavLink>
+                <button class="btn btn-danger btn-sm"
+                        @onclick="@(e => DeleteBook(b))">
+                    Delete
+                </button>
             </td>
         </tr>
             }
@@ -44,13 +48,13 @@
         else
         {
             <tr>
-                <td colspan="5" class="text-center">No Products</td>
+                <td colspan="5" class="text-center">No Books</td>
             </tr>
         }
     </tbody>
 </table>
 
-<NavLink class="btn btn-primary" href="/admin/products/create">Create</NavLink>
+<NavLink class="btn btn-primary" href="/admin/books/create">Create</NavLink>
 
 @code {
     public IRepositoryRepository Repository => Service;
@@ -62,6 +66,11 @@
     public async Task UpdateData()
     {
         BookData = await Repository.Books.ToListAsync();
+    }
+    public async Task DeleteBook(Book b)
+    {
+        Repository.DeleteBook(b);
+        await UpdateData();
     }
     public string GetDetailsUrl(long id) => $"/admin/books/details/{id}";
     public string GetEditUrl(long id) => $"/admin/books/edit/{id}";

@@ -12,9 +12,9 @@ The project will be built as a web page using MVC and will eventually be deploye
 
 ***************************************************************************************************************************************************************************************
 
-Revisions:  Added additional administrative functionality.
+Revisions:  Working on fixing display issues and finalizing initial build of project.
 
-Revision Date:  10/27/2020
+Revision Date:  11/03/2020
 
 Revised By:  Kyle Dailey
 
@@ -58,7 +58,6 @@ namespace BookRepository
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddServerSideBlazor();
         }
 
