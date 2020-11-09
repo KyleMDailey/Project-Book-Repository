@@ -12,9 +12,9 @@ The project will be built as a web page using MVC and will eventually be deploye
 
 ***************************************************************************************************************************************************************************************
 
-Revisions:  Working on fixing display issues and finalizing initial build of project.
+Revisions:  Hail Mary for fixing bootstrap.
 
-Revision Date:  11/03/2020
+Revision Date:  11/09/2020
 
 Revised By:  Kyle Dailey
 
